@@ -130,13 +130,8 @@ function calculateFinalSize() {
 
 function applyStyle() {
     for (i = 0; i < map.length; i++) {
-        var itemTdElements = document.getElementById(map[i].id).childNodes; // TODO: optimize by doing one search instead of map.length searches
-        var titleTdElement;
-        for (var j = 0; j < itemTdElements.length; j++) {
-            if (itemTdElements[j].className == "title") {
-                titleTdElement = itemTdElements[j];
-            }
-        }
+        var itemTrElement = document.getElementById(map[i].id); // TODO: optimize by doing one search instead of map.length searches
+        var titleTdElement = itemTrElement.getElementsByClassName("storylink")[0];
         if (titleTdElement) {
             titleTdElement.style.fontSize = map[i].size + "px";
         }

@@ -131,7 +131,7 @@ function calculateFinalSize() {
 function applyStyle() {
     for (i = 0; i < map.length; i++) {
         var itemTrElement = document.getElementById(map[i].id); // TODO: optimize by doing one search instead of map.length searches
-        var titleTdElement = itemTrElement.getElementsByClassName("storylink")[0];
+        var titleTdElement = itemTrElement.getElementsByClassName("titlelink")[0];
         if (titleTdElement) {
             titleTdElement.style.fontSize = map[i].size + "px";
         }

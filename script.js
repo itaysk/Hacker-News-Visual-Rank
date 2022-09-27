@@ -1,56 +1,16 @@
 /*
 sample HN item:
 
-item tr:
-<tr class="athing" id="12748863">
-    <td align="right" valign="top" class="title">
-        <span class="rank">18.</span>
-    </td>
-    <td valign="top" class="votelinks">
-        <center>
-            <a id="up_12748863" onclick="return vote(this, &quot;up&quot;)" href="vote?id=12748863&amp;how=up&amp;auth=651eeca53c70cbbffd725c9c06cc150df7bf5571&amp;goto=news" class="nosee">
-                <div class="votearrow" title="upvote"></div>
-            </a>
-        </center>
-    </td>
-    <td class="title" style="font-size: 29px;">
-        <a href="https://www.tesla.com/blog/all-tesla-cars-being-produced-now-have-full-self-driving-hardware" class="storylink">
-            All Tesla Cars Being Produced Now Have Full Self-Driving Hardware
-        </a>
-        <span class="sitebit comhead"> (
-            <a href="from?site=tesla.com">
-                <span class="sitestr">tesla.com</span>
-            </a>
-        )</span>
-    </td>
-</tr>
-
-metadata tr:
-<tr>
-    <td colspan="2"></td>
-    <td class="subtext">
-        <span class="score" id="score_12748863">1412 points</span>
-         by <a href="user?id=impish19" class="hnuser">impish19</a>
-        <span class="age">
-            <a href="item?id=12748863">2 days ago</a>
-        </span>
-        <span id="unv_12748863"></span> | 
-        <a href="flag?id=12748863&amp;auth=651eeca53c70cbbffd725c9c06cc150df7bf5571&amp;goto=news">flag</a> | 
-        <a href="hide?id=12748863&amp;goto=news&amp;auth=651eeca53c70cbbffd725c9c06cc150df7bf5571" onclick="return hidestory(this, 12748863)">hide</a> | 
-        <a href="item?id=12748863">1069&nbsp;comments</a>              
-    </td>
-</tr>
-
-
-Some items cant be voted or discussed (?), and metadata tr will look like this:
-<tr>
-    <td colspan="2"></td>
-    <td class="subtext">
-        <span class="age">
-            <a href="item?id=12770150">41 minutes ago</a>
-        </span> | 
-        <a href="hide?id=12770150&amp;goto=news&amp;auth=719fc792107f5c47afce7958002eeae4e40b77c7" onclick="return hidestory(this, 12770150)">hide</a>
-    </td>
+<tr class="athing" id="32987028">
+	<td align="right" valign="top" class="title"><span class="rank">27.</span></td>
+	<td valign="top" class="votelinks">
+		<center>
+			<a id="up_32987028" class="clicky" href="vote?id=32987028&amp;how=up&amp;auth=f127c4b9607ee6f58efc7de0790ff40256f36bc8&amp;goto=news">
+				<div class="votearrow" title="upvote"></div>
+			</a>
+		</center>
+	</td>
+	<td class="title"><a href="https://vivqu.com/blog/2022/09/25/outdated-apps/" class="titlelink" style="font-size: 30px;">Outdated vs. Complete: In defense of apps that don’t need updates</a><span class="sitebit comhead"> (<a href="from?site=vivqu.com"><span class="sitestr">vivqu.com</span></a>)</span></td>
 </tr>
 */
 
@@ -85,7 +45,7 @@ applyStyle();
 function buildIdPointsCommentsMap() {
     var subtextElementsTd = document.getElementsByClassName("subtext");
     Array.prototype.forEach.call(subtextElementsTd, function (subtextElementTd) {
-        var scoreElementSpan = subtextElementTd.firstElementChild;
+        var scoreElementSpan = subtextElementTd.firstElementChild.firstElementChild;
         //sample match: <span class="score" id="score_12748863">1412 points</span>
         if (scoreElementSpan.className !== "score") { return; } //some items cant be voted, exclude them
         var id = scoreElementSpan.id.replace("score_", "");

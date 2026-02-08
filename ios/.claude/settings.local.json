@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(xcodebuild:*)",
+      "mcp__xcode__XcodeListWindows",
+      "mcp__xcode__XcodeLS",
+      "mcp__xcode__XcodeListNavigatorIssues",
+      "mcp__xcode__XcodeRead",
+      "mcp__xcode__XcodeUpdate",
+      "mcp__xcode__BuildProject",
+      "mcp__xcode__XcodeGrep",
+      "WebFetch(domain:news.ycombinator.com)",
+      "mcp__xcode__XcodeGlob",
+      "mcp__xcode__RenderPreview",
+      "Bash(rsvg-convert:*)",
+      "WebSearch",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:dev.to)"
+    ]
+  }
+}
